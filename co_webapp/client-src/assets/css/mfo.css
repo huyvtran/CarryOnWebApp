@@ -1,0 +1,234 @@
+
+
+/*  -------------------------------------------------------------------------------------------- */
+/*  --------------------------------------       LAYOUT        --------------------------------- */
+/*  -------------------------------------------------------------------------------------------- */
+
+/*.sidebar, .sidebar-wrapper {
+    display: none;
+}*/
+
+.navbar {
+  overflow: hidden;
+  /*background-color: #333;*/
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  color: #fff;
+  padding-top: 25px;
+  z-index: 1029;
+}
+
+.main-panel.sidebar-not-present {
+  width: 100%;
+}
+
+button.btn.no-transform {
+  text-transform: none;
+}
+
+.carryon-navbar .navbar-brand {
+  font-size: 30px;
+}
+
+
+.carryon-navbar .navbar-item {
+  font-size: 18px;
+}
+
+.carryon-navbar.navbar .navbar-nav > li > a {
+  font-size: 18px !important;
+}
+
+.v-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.h-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+
+
+/*  -------------------------------------------------------------------------------------------- */
+/*  ----------------------------------        LANDING PAGE        ------------------------------ */
+/*  -------------------------------------------------------------------------------------------- */
+.landing-page .header h1 {
+  font-weight: 500 !important;
+  font-size: 32px !important;
+}
+
+.landing-page .header h2 {
+  font-size: 26px !important;
+}
+
+.landing-page .container.main-search-container {
+  padding-top: 140px !important;
+}
+
+.landing-page .card-header.card-header-text {
+  padding: 12px;
+}
+
+.landing-page .card.main-search-form .card-header.card-header-text h4 {
+  font-size: 17px;
+}
+
+.landing-page .card.main-search-form label.control-label {
+  font-size: 16px !important;
+  /*top: -15px !important;*/
+}
+
+.landing-page .card .card-content {
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
+
+#card-content-foce-relative {
+  position: relative;
+}
+
+.btn.btn-fill.btn-rose,
+.btn.btn-fill.btn-rose:hover, .btn.btn-fill.btn-rose:focus, .btn.btn-fill.btn-rose:active,
+.btn.btn-fill.btn-rose.active, .btn.btn-fill.btn-rose:active:focus {
+  background-color: #e91e63;
+}
+
+.btn.btn-fill.btn-info,
+.btn.btn-fill.btn-info:hover, .btn.btn-fill.btn-info:focus, .btn.btn-fill.btn-info:active,
+.btn.btn-fill.btn-info.active, .btn.btn-fill.btn-info:active:focus {
+  background-color: #00bcd4 !important;
+  box-shadow: 0 2px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2) !important;
+}
+
+
+.btn#btnSearchTransports, .btn#btnSearchGoodsToTransports {
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+  .btn#btnSearchTransports .material-icons, .btn#btnSearchGoodsToTransports .material-icons {
+    font-size: 28px;
+  }
+
+div.al-center {
+  text-align: center;
+}
+
+.checkbox.pt-0 {
+  padding-top: 0px;
+}
+
+div.search-content {
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+.row.adc-announcment-content {
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 135px;
+  text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 100px;
+  border: #00bcd4 solid 1px;
+}
+
+.container-flex {
+  display: flex; /* or inline-flex */
+  flex-flow: center;
+  justify-content: space-around;
+}
+
+  .container-flex .announcement-item {
+    width: calc(100%/2);
+  }
+
+.v-container {
+  display: flex; /* or inline-flex */
+  flex-direction: column;
+  flex-flow: center;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.vertical-separator {
+  min-width: 5px;
+  min-height: 30px;
+  border-left: 1px solid white;
+}
+
+.circle-separator {
+  background: white;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.announcement-item {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/*  -------------------------------------------------------------------------------------------- */
+/*  ------------------------------------        RQGT PAGE        ------------------------------- */
+/*  -------------------------------------------------------------------------------------------- */
+
+.transport-list .container-fluid {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.transport-list .input-group-addon {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 70px;
+}
+
+.transport-list .item-description-content {
+  color: rgb(85, 85, 85);
+  font-weight: normal;
+  font-size: 16px;
+  padding-top: 6px;
+  margin-bottom: 0px;
+}
+
+.description-group .input-group-addon {
+  padding-top: 8px;
+  vertical-align: top;
+}
+
+.description-group .description-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+.contact-info .contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-info .btn-contact {
+  width: 65px;
+}
+
+  .contact-info .btn-contact .btn.btn-fab.btn-fab-mini {
+    height: 50px;
+    width: 50px;
+  }
+
+    .contact-info .btn-contact .btn.btn-fab.btn-fab-mini i {
+      font-size: 21px;
+    }
+
+.contact-info .item-description-content {
+  padding-top: 12px;
+}
