@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, AfterViewInit } from '@angular/core';
 // import initWizard = require('../../../../assets/js/init/initWizard.js');
-import { TransReqService } from './../../_services/trans-req.service';
+import { TransReqService } from './../_services/trans-req.service';
 
 declare var $: any;
 interface FileReaderEventTarget extends EventTarget {
@@ -12,11 +12,11 @@ interface FileReaderEvent extends Event {
 }
 @Component({
     moduleId: module.id,
-    selector: 'wizard-cmp',
-    templateUrl: 'wizard.component.html'
+    selector: 'transport-publish',
+    templateUrl: 'transport-publish.component.html'
 })
 
-export class WizardComponent implements OnInit, OnChanges, AfterViewInit {
+export class TransportPublishComponent implements OnInit, OnChanges, AfterViewInit {
 
     constructor(private transReqService: TransReqService) { }
 

@@ -4,11 +4,22 @@
       <button class="btn btn-primary"
               (click)="loadRqgt()">Test http<div class="ripple-container"></div></button>
     </div>
-    <div class="row">
-      <div class="card">
-        <!--<div class="card-header card-header-icon" data-background-color="rose">
-          <i class="material-icons">contacts</i>
-        </div>-->
+
+    <!-- Loader -->
+    <div class="loader-css-material" *ngIf="!rqgtService.loadedRqgtResults">
+      <div class="showbox">
+        <div class="loader">
+          <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="row"
+         *ngFor="let currentRqgt of rqgtService.currentRqgtResults">
+      <div class="card"
+          *ngIf="rqgtService.loadedRqgtResults">
         <div class="card-header card-header-icon" data-background-color="rose">
           <h4 class="card-title">10 m3</h4>
         </div>
@@ -130,3 +141,19 @@
     </div>
   </div>
 </div>
+
+<div class="footer-transport-suggest-publish" *ngIf="showSuggestPublishFooter">
+  <div class="alert alert-info" data-notify="container">
+    <button type="button" aria-hidden="true"
+            class="close" (click)="showSuggestPublishFooter = false;">
+      <i class="material-icons">close</i>
+    </button>
+    <div class="notif-content">
+      <p class="label-sentence" data-notify="message">Non trovi la richiesta per te?</p>
+      <button class="btn btn-primary publish-btn-call"
+              (click)="publishAvailability()">Pubblica la disponibilita'<div class="ripple-container"></div></button>
+    </div>
+  </div>
+</div>
+
+

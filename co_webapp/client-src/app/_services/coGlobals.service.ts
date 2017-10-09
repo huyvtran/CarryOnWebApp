@@ -21,9 +21,9 @@ export class coGlobalsService {
 
 
     /* Debug */ 
-    public appUrl = 'http://localhost:57493/';
+    //public appUrl = 'http://localhost:57493/';
     /* Azure */ 
-    //public appUrl = 'http://carryonwebapi.azurewebsites.net/';
+    public appUrl = 'http://carryonwebapi.azurewebsites.net/';
 
     public gTestVar = 'Service Init!';
     public devUrl = 'https://jsonplaceholder.typicode.com/posts/100';

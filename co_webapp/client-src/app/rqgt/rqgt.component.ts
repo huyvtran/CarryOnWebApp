@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { rqgtService } from './../_services/rqgt.service';
 
 @Component({
@@ -7,12 +8,22 @@ import { rqgtService } from './../_services/rqgt.service';
     templateUrl: 'rqgt.component.html'
 })
 
-export class RqgtComponent{
+export class RqgtComponent implements OnInit{
 
+    constructor(private rqgtService: rqgtService, private router: Router) { }
 
-    constructor(private rqgtService: rqgtService) { }
+    ngOnInit() {
+        //this.rqgtService.getFilteredRqgt();
+    }
+
+    public showSuggestPublishFooter = true;
 
     loadRqgt() {
         this.rqgtService.getFilteredRqgt();
+    }
+
+    publishAvailability() {
+        this.router.navigateByUrl('/transport-publish');
+        //this.router.navigateByUrl('/dashboard');
     }
 }

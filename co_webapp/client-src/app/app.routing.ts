@@ -19,6 +19,9 @@ export const AppRoutes: Routes = [
             }, {
                 path: '',
                 loadChildren: './rqgt/rqgt.module#RqgtModule'
+            }, {
+                path: '',
+                loadChildren: './transport/transport.module#TransportModule'
             },
             {
                 path: 'components',

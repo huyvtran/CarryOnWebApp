@@ -16,6 +16,8 @@ import { AppRoutes } from './app.routing';
 
 import { coGlobalsService } from './_services/coGlobals.service';
 import { rqgtService } from './_services/rqgt.service';
+import { ErrorMngService } from './_services/errorMng.service';
+import { TransReqService } from './_services/trans-req.service';
 
 
 @NgModule({
@@ -31,9 +33,9 @@ import { rqgtService } from './_services/rqgt.service';
     declarations: [
         AppComponent,
         AdminLayoutComponent,
-        AuthLayoutComponent
+        AuthLayoutComponent        
     ],
-    providers: [coGlobalsService, rqgtService ],
+    providers: [coGlobalsService, rqgtService, ErrorMngService, TransReqService ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

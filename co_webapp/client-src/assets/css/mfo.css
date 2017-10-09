@@ -212,6 +212,7 @@ div.search-content {
   font-size: 16px;
   font-weight: bold;
 }
+
 .contact-info .contact-item {
   margin-bottom: 20px;
 }
@@ -232,3 +233,140 @@ div.search-content {
 .contact-info .item-description-content {
   padding-top: 12px;
 }
+
+
+/*  --------------------------------------------------------------------------------------------------------------  */
+/*  -------------------------   Footer to suggest publish request/availability    --------------------------------  */
+/*  --------------------------------------------------------------------------------------------------------------  */
+.footer-transport-suggest-publish {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  z-index: 9999;
+  left: 260px;
+}
+
+  .footer-transport-suggest-publish .alert {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+  }
+
+  .footer-transport-suggest-publish .close {
+    font-size: 20px;
+  }
+
+.notif-content {
+  text-align: center;
+}
+
+  .notif-content .label-sentence {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .notif-content .publish-btn-call {
+    margin-top: 0px;
+    margin-bottom: 2px;
+  }
+
+/*  --------------------------------------------------------------------------------------------------------------  */
+/*  ----------------------------------   Modern Google Loader in Pure CSS    -------------------------------------  */
+/*  --------------------------------------------------------------------------------------------------------------  */
+.loader-css-material .loader {
+  position: relative;
+  margin: 0 auto;
+  width: 50px;
+  /*&:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }*/
+}
+
+  .loader-css-material .loader:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+
+.loader-css-material .circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.loader-css-material .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+/*@keyframes color {
+  100%,
+  0% {
+    stroke: #d62d20;
+  }
+  40% {
+    stroke: #104A93;
+  }
+  66% {
+    stroke: rgb(223, 226, 241);
+  }
+  80%,
+  90% {
+    stroke: #e6b400;
+  }
+}*/
+
+@keyframes color {
+  100%, 0% {
+    stroke: #104A93;
+  }
+
+  40% {
+    stroke: rgb(223, 226, 241);
+  }
+
+  78%, 90% {
+    stroke: #e6b400;
+  }
+}
+
+/*  --------------------------------------------------------------------------------------------------------------  */
+/*  ---------------------------------   END -- Modern Google Loader in Pure CSS    ----------------------------------  */
+/*  --------------------------------------------------------------------------------------------------------------  */
+

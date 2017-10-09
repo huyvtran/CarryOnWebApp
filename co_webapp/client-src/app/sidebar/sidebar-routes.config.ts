@@ -4,6 +4,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard', icon: 'material-icons' },
 
     { path: '/rqgt-list', title: 'Rqgt', icon: 'material-icons' },
+    { path: '/transport-publish', title: 'Transport publish ', icon: 'material-icons' },
 
     { path: '/pages/timeline', title: 'Timeline Page', icon:'material-icons' },
     { path: '/pages/user', title: 'User Page', icon:'material-icons' },
