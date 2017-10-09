@@ -31,9 +31,9 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
         }
     };
 
-public testProfile = "testProfile";
-public profile = {};
-loadUser() {
+    public testProfile = "testProfile";
+    public profile = {};
+    loadUser() {
         //this.transReqService.testServ();
         this.transReqService.getUser().subscribe(data => this.profile = data);
     }
@@ -45,18 +45,22 @@ loadUser() {
         // Code for the Validator
         var $validator = $('.wizard-card form').validate({
             rules: {
-                firstname: {
-                    required: true,
-                    minlength: 3
-                },
-                lastname: {
+                firstAndLastName: {
                     required: true,
                     minlength: 3
                 },
                 email: {
                     required: true,
                     minlength: 3,
-                }
+                },
+                password: {
+                    required: true,
+                    minlength: 3,
+                },
+                passwordConfirm: {
+                    required: true,
+                    minlength: 3,
+                },
             },
 
             errorPlacement: function (error, element) {
@@ -71,11 +75,16 @@ loadUser() {
             'previousSelector': '.btn-previous',
 
             onNext: function (tab, navigation, index) {
-                var $valid = $('.wizard-card form').valid();
-                if (!$valid) {
-                    $validator.focusInvalid();
-                    return false;
-                }
+                /* ----- To be decommented ----- */
+                //var $valid = $('.wizard-card form').valid();
+                //if (!$valid) {
+                //    $validator.focusInvalid();
+                //    return false;
+                //}
+
+                /* ----- Mock to be removed ----- */
+                return true;
+                /* ----- Mock to be removed ----- */
             },
 
             onInit: function (tab, navigation, index) {
