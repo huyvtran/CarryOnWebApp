@@ -14,11 +14,12 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { AppRoutes } from './app.routing';
 
-import { coGlobalsService } from './_services/coGlobals.service';
+import { CoGlobalsService } from './_services/coGlobals.service';
 import { rqgtService } from './_services/rqgt.service';
 import { ErrorMngService } from './_services/errorMng.service';
 import { TransReqService } from './_services/trans-req.service';
 
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 @NgModule({
     imports:      [
@@ -28,14 +29,15 @@ import { TransReqService } from './_services/trans-req.service';
         HttpModule,
         SidebarModule,
         NavbarModule,
-        FooterModule
+        FooterModule,
+        DpDatePickerModule
     ],
     declarations: [
         AppComponent,
         AdminLayoutComponent,
         AuthLayoutComponent        
     ],
-    providers: [coGlobalsService, rqgtService, ErrorMngService, TransReqService ],
+    providers: [CoGlobalsService, rqgtService, ErrorMngService, TransReqService ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

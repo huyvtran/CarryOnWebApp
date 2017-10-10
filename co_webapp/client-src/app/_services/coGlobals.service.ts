@@ -2,28 +2,50 @@ import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/toPromise';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
 import { ROUTES } from '../sidebar/sidebar-routes.config';
 
+declare var google: any;
+
+
 @Injectable()
-export class coGlobalsService {
+export class CoGlobalsService {
 
     constructor(private http: Http) { }
-
-    //public RoutesEnum = {
-    //    DASHBOARD: 0,
-    //    RQGT: 1,
-    //    properties: {
-    //        0: { sref: 'dashboard' },
-    //        1: { sref: 'rqgt-list' }
-    //    }
-    //};
-
-
+    
     /* Debug */ 
     //public appUrl = 'http://localhost:57493/';
     /* Azure */ 
     public appUrl = 'http://carryonwebapi.azurewebsites.net/';
+
+    public loadGooleMaps() {
+        var retPromise = new Promise((resolve, reject) => {
+            var trialCounter = 0;
+            var loadInterval = setInterval(() => {
+                if (google != undefined) {
+                    killLoadInterval();
+                    resolve();
+                } else if (trialCounter > 30) {
+                    killLoadInterval();
+                    reject();
+                };
+                trialCounter++;
+            }, 500);
+
+            var killLoadInterval = function () {
+                if (loadInterval) {
+                    clearInterval(loadInterval);
+                }
+            };
+
+            // If async opp successful
+            //resolve();
+
+            // If async opp fails
+            //reject();
+        });
+        
+        return retPromise;
+    };
 
     public gTestVar = 'Service Init!';
     public devUrl = 'https://jsonplaceholder.typicode.com/posts/100';

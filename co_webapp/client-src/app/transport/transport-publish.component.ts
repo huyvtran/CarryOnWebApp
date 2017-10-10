@@ -15,7 +15,6 @@ interface FileReaderEvent extends Event {
     selector: 'transport-publish',
     templateUrl: 'transport-publish.component.html'
 })
-
 export class TransportPublishComponent implements OnInit, OnChanges, AfterViewInit {
 
     constructor(private transReqService: TransReqService) { }
@@ -152,7 +151,7 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
                     $($wizard).find('.btn-finish').show();
                 } else {
                     $($wizard).find('.btn-next').show();
-                    $($wizard).find('.btn-finish').hide();
+                    $($wizard).find('.btn-finish').hide(); 
                 }
 
                 var button_text = navigation.find('li:nth-child(' + $current + ') a').html();

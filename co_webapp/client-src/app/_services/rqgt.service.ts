@@ -3,7 +3,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { coGlobalsService } from './coGlobals.service';
+import { CoGlobalsService } from './coGlobals.service';
 import { ErrorMngService } from './errorMng.service';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class rqgtService {
     public currentRqgtResults = [];
     public loadedRqgtResults = false;
 
-    constructor(private http: Http, private _coGlobalsService: coGlobalsService,
+    constructor(private http: Http, private _coGlobalsService: CoGlobalsService,
         private errorMngService: ErrorMngService) { }
 
 
