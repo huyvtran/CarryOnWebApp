@@ -1,8 +1,16 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="col-sm-8 col-sm-offset-2">
+      
       <!--      Wizard container        -->
       <div class="wizard-container">
+        <div class="loader">
+          <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10" />
+            </svg>
+          </div>
+        </div>
         <div class="card wizard-card" data-color="rose" id="wizardProfile">
           <form action="" method="">
             <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
@@ -64,7 +72,7 @@
                             <!-- Password -->
                             <div class="input-group">
                               <span class="input-group-addon">
-                                <i class="material-icons">star_half</i>
+                                <i class="material-icons">star</i>
                               </span>
                               <div class="form-group label-floating">
                                 <label class="control-label">
@@ -150,8 +158,6 @@
                       </div>
                     </div>
 
-
-
                   </div>
 
                 </div>
@@ -219,7 +225,8 @@
               </div>
               <div class="pull-right">
                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
-                <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Pubblica' />
+                <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Pubblica'
+                       (click)="testpublishItem()"/>
               </div>
               <div class="pull-left">
                 <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />

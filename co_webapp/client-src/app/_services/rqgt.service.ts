@@ -56,7 +56,6 @@ export class RqgtService {
                     // use here the error msg service
                     this.errorMngService.showSystemError(resp.resultMessage);
                 };
-                console.log(resp);
             })
             .catch(err => {
                 this.loadedRqgtResults = true;
@@ -68,10 +67,8 @@ export class RqgtService {
     testHttp(): any {
         return this.http.get(this.devUrl)
             .toPromise()
-            //.then(resp => console.log(resp))
             .then(function (resp) {
                 localStorage.setItem('currentUser', 'yes yes');
-                console.log(resp);
             })
             .catch(err => {
                 console.error(err)
