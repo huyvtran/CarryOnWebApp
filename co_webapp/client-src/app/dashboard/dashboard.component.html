@@ -16,20 +16,13 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group label-floating">
-                          <!--<label class="control-label">Partenza da...</label>-->
                           <input type="text" placeholder="Partenza da..." class="form-control" id="req-filter-from">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group label-floating">
-                          <!--<label class="control-label">Arrivo a...</label>-->
                           <input type="text" placeholder="Arrivo a..." class="form-control" id="req-filter-to">
                         </div>
-                        <!--<div class="checkbox pt-0">
-                            <label>
-                            <input type="checkbox" name="optionsCheckboxes"> Qualsiasi destinazione
-                            </label>
-                        </div>-->
                       </div>
                       
                       <div class="col-md-4">
@@ -74,26 +67,28 @@
                       <!--<div class="col-md-4 al-center">
                         <input [(ngModel)]="reqDate" name="reqDate"/>
                       </div>-->
-                      <div class="col-md-4 al-center">
-                        <h1>{{reqDate}}</h1>
-                      </div>
                       <!--<div class="col-md-4 al-center">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" name="optionsCheckboxes"> Ho un camion
-                          </label>
-                        </div>
+                        <h1>{{reqDate}}</h1>
                       </div>-->
                       <div class="col-md-4 al-center">
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" name="optionsCheckboxes"> Ho della merce
+                            <input type="checkbox" name="optionsCheckboxes"
+                                   [checked]="hasTransport" (change)="userHasGoods(false)"> Ho un camion
+                          </label>
+                        </div>
+                      </div>
+                      <div class="col-md-4 al-center">
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" name="optionsCheckboxes"
+                                   [checked]="hasGoods" (change)="userHasGoods(true)"> Ho della merce
                           </label>
                         </div>
                       </div>
                       <div class="col-md-4 al-center">
                         <button type="submit" class="btn btn-fill btn-info btn-lg no-transform" id="btnSearchTransports"
-                                (click)="closaDp()">
+                                (click)="proceed()">
                           PROCEDI
                         </button>
                       </div>

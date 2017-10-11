@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, AfterViewInit } from '@angular/core';
-// import initWizard = require('../../../../assets/js/init/initWizard.js');
-import { TransReqService } from './../_services/trans-req.service';
+import { UserService } from "app/_services/user.service";
+import { CommonService } from "app/_services/common.service";
+import { TransportService } from "app/_services/transport.service";
 
 declare var $: any;
 interface FileReaderEventTarget extends EventTarget {
@@ -16,8 +17,30 @@ interface FileReaderEvent extends Event {
     templateUrl: 'transport-publish.component.html'
 })
 export class TransportPublishComponent implements OnInit, OnChanges, AfterViewInit {
+    public userIsRegistering = false;
+    public currentUserData : any;
 
-    constructor(private transReqService: TransReqService) { }
+    constructor(private userService: UserService, private commonService: CommonService,
+        private transportService: TransportService) { }
+
+    publishItem() {
+        this.userService.optionallyFirstEuthenticate(this.currentUserData, !this.userIsRegistering, this.userIsRegistering)
+            .then(
+            (resp) => {
+                /* Execute here item publishing */
+                this.commonService.publishItem(this.transportService.currentTransport, true)
+                    .then(
+                    () => {
+
+                    }
+                    );
+            }
+        );
+    }
+
+    /* ---------------------------------------------------------- */
+    /* --------------------- WIZARD related --------------------- */
+    /* ---------------------------------------------------------- */
 
     readURL(input) {
         if (input.files && input.files[0]) {
@@ -29,17 +52,8 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
             reader.readAsDataURL(input.files[0]);
         }
     };
-
-    public testProfile = "testProfile";
-    public profile = {};
-    loadUser() {
-        //this.transReqService.testServ();
-        this.transReqService.getUser().subscribe(data => this.profile = data);
-    }
-
+    
     ngOnInit() {
-
-        this.loadUser();
 
         // Code for the Validator
         var $validator = $('.wizard-card form').validate({
@@ -241,6 +255,7 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     ngAfterViewInit() {
         $('.wizard-card').each(function () {
 
@@ -273,4 +288,8 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
             });
         });
     }
+
+    /* ---------------------------------------------------------- */
+    /* --------------------- WIZARD related --------------------- */
+    /* ---------------------------------------------------------- */
 }

@@ -15,7 +15,7 @@
             <div class="wizard-navigation">
               <ul>
                 <li>
-                  <a href="#about" data-toggle="tab">Dati Personali</a>
+                  <a href="#personal-data" data-toggle="tab">Dati Personali</a>
                 </li>
                 <li>
                   <a href="#account" data-toggle="tab">Trasporto</a>
@@ -26,74 +26,134 @@
               </ul>
             </div>
             <div class="tab-content">
-              <div class="tab-pane" id="about">
+              <div class="tab-pane personal-data-content" id="personal-data">
                 <div class="row">
-                  <h4 class="info-text"> Non risulti ancora registrato, fallo ora. Ci vuole 1 minuto!</h4>
-                  <div class="col-sm-4 col-sm-offset-1">
-                    <div class="picture-container">
-                      <div class="picture">
-                        <img src="../../assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
-                        <input type="file" id="wizard-picture">
+                  <h4 class="info-text"> Solo per la prima volta, accedi o registrati. Ci vuole 1 minuto!</h4>
+
+                  <div class="card-content">
+                    <div class="h-flex flex-center tab-customized">
+                      <div>
+                        <a href="#pill1" data-toggle="tab"
+                           (click)="userIsRegistering=false"
+                           [ngClass]="{'active': !userIsRegistering}">Accedi</a>
                       </div>
-                      <h6>Aggiungi la foto</h6>
+                      <div>
+                        <a href="#pill2" data-toggle="tab"
+                           (click)="userIsRegistering=true"
+                           [ngClass]="{'active': userIsRegistering}">Registrati</a>
+                      </div>
                     </div>
+
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="pill1">
+                        <div class="login-tab-content">
+                          <div class="col-sm-6 col-sm-offset-2">
+                            <!-- Email -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">email</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Email
+                                  <small>(required)</small>
+                                </label>
+                                <input name="email" type="email" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">star_half</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Password
+                                  <small>(required)</small>
+                                </label>
+                                <input name="password" type="password" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="tab-pane" id="pill2">
+                        <div class="register-tab-content">
+                          <div class="col-sm-4 col-sm-offset-1">
+                            <div class="picture-container">
+                              <div class="picture">
+                                <img src="../../assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                <input type="file" id="wizard-picture">
+                              </div>
+                              <h6>Aggiungi la foto</h6>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <!-- Email -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">email</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Email
+                                  <small>(required)</small>
+                                </label>
+                                <input name="email" type="email" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">star_half</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Password
+                                  <small>(required)</small>
+                                </label>
+                                <input name="password" type="password" class="form-control">
+                              </div>
+                            </div>
+                            <!-- Confirm password -->
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">star</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Conferma Password
+                                  <small>(required)</small>
+                                </label>
+                                <input name="passwordConfirm" type="password" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Nome e Cognome -->
+                          <div class="col-lg-10 col-lg-offset-1">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <i class="material-icons">email</i>
+                              </span>
+                              <div class="form-group label-floating">
+                                <label class="control-label">
+                                  Nome e Cognome
+                                  <small>(required)</small>
+                                </label>
+                                <input name="firstAndLastName" type="text" class="form-control">
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+
+
                   </div>
-                  <div class="col-sm-6">
-                    <!-- Email -->
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="material-icons">email</i>
-                      </span>
-                      <div class="form-group label-floating">
-                        <label class="control-label">
-                          Email
-                          <small>(required)</small>
-                        </label>
-                        <input name="email" type="email" class="form-control">
-                      </div>
-                    </div>
-                    <!-- Password -->
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="material-icons">star_half</i>
-                      </span>
-                      <div class="form-group label-floating">
-                        <label class="control-label">
-                          Password
-                          <small>(required)</small>
-                        </label>
-                        <input name="password" type="password" class="form-control">
-                      </div>
-                    </div>
-                    <!-- Confirm password -->
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="material-icons">star</i>
-                      </span>
-                      <div class="form-group label-floating">
-                        <label class="control-label">
-                          Conferma Password
-                          <small>(required)</small>
-                        </label>
-                        <input name="passwordConfirm" type="password" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Nome e Cognome -->
-                  <div class="col-lg-10 col-lg-offset-1">
-                    <div class="input-group">
-                      <span class="input-group-addon">
-                        <i class="material-icons">email</i>
-                      </span>
-                      <div class="form-group label-floating">
-                        <label class="control-label">
-                          Nome e Cognome
-                          <small>(required)</small>
-                        </label>
-                        <input name="firstAndLastName" type="text" class="form-control">
-                      </div>
-                    </div>
-                  </div>
+
                 </div>
               </div>
               <div class="tab-pane" id="account">

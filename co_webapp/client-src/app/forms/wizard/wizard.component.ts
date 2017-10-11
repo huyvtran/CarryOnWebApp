@@ -1,6 +1,5 @@
 import { Component, OnInit, OnChanges, AfterViewInit } from '@angular/core';
 // import initWizard = require('../../../../assets/js/init/initWizard.js');
-import { TransReqService } from './../../_services/trans-req.service';
 
 declare var $: any;
 interface FileReaderEventTarget extends EventTarget {
@@ -18,7 +17,7 @@ interface FileReaderEvent extends Event {
 
 export class WizardComponent implements OnInit, OnChanges, AfterViewInit {
 
-    constructor(private transReqService: TransReqService) { }
+    constructor() { }
 
     readURL(input) {
         if (input.files && input.files[0]) {
@@ -30,17 +29,8 @@ export class WizardComponent implements OnInit, OnChanges, AfterViewInit {
             reader.readAsDataURL(input.files[0]);
         }
     };
-
-public testProfile = "testProfile";
-public profile = {};
-loadUser() {
-        //this.transReqService.testServ();
-        this.transReqService.getUser().subscribe(data => this.profile = data);
-    }
-
+   
     ngOnInit() {
-
-        this.loadUser();
 
         // Code for the Validator
         var $validator = $('.wizard-card form').validate({

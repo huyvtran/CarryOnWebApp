@@ -9,6 +9,7 @@ declare var google: any;
 
 @Injectable()
 export class CoGlobalsService {
+    public userData: any;
 
     constructor(private http: Http) { }
     
@@ -16,6 +17,10 @@ export class CoGlobalsService {
     //public appUrl = 'http://localhost:57493/';
     /* Azure */ 
     public appUrl = 'http://carryonwebapi.azurewebsites.net/';
+
+    public getAppUrl() {
+        return this.appUrl;
+    };
 
     public loadGooleMaps() {
         var retPromise = new Promise((resolve, reject) => {
@@ -45,33 +50,12 @@ export class CoGlobalsService {
         });
         
         return retPromise;
-    };
+    };   
 
-    public gTestVar = 'Service Init!';
-    public devUrl = 'https://jsonplaceholder.typicode.com/posts/100';
 
-    public getAppUrl() {
-        return this.appUrl;
-    }
-
-    getTestVar() {
-        return this.gTestVar;
-    }
-
-    setTestVar = function (val) {
-        this.gTestVar = val;
-    }
-
-    testHttp(): any {
-        return this.http.get(this.devUrl)
-            .toPromise()
-            //.then(resp => console.log(resp))
-            .then(function (resp) {
-                localStorage.setItem('currentUser', 'yes yes');
-                console.log(resp);
-            })
-            .catch(err => console.error(err));
-
+    /* User related data */
+    setUserData(_userData) {
+        this.userData = _userData;
     }
 
 }

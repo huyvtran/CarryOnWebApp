@@ -10,7 +10,6 @@ import { ExtendedFormsComponent } from './extendedforms/extendedforms.component'
 import { RegularFormsComponent } from './regularforms/regularforms.component';
 import { ValidationFormsComponent } from './validationforms/validationforms.component';
 import { WizardComponent } from './wizard/wizard.component';
-import { TransReqService } from './../_services/trans-req.service';
 
 
 @NgModule({
@@ -27,7 +26,7 @@ import { TransReqService } from './../_services/trans-req.service';
       WizardComponent,
       EqualValidator
   ],
-    providers: [TransReqService]
+    providers: []
 })
 
 export class Forms {}

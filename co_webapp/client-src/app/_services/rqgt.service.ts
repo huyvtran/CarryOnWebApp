@@ -7,9 +7,10 @@ import { CoGlobalsService } from './coGlobals.service';
 import { ErrorMngService } from './errorMng.service';
 
 @Injectable()
-export class rqgtService {
+export class RqgtService {
     public reqBody;
     public devUrl: string;
+    public currentRqgt: any;
     public currentRqgtResults = [];
     public loadedRqgtResults = false;
 
@@ -57,7 +58,11 @@ export class rqgtService {
                 };
                 console.log(resp);
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                this.loadedRqgtResults = true;
+                this.errorMngService.showSystemError(err.resultMessage);
+                console.error(err)
+            });
     }
 
     testHttp(): any {
@@ -68,7 +73,9 @@ export class rqgtService {
                 localStorage.setItem('currentUser', 'yes yes');
                 console.log(resp);
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err)
+            });
 
     }
 
