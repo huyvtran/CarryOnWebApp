@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Params, Router } from "@angular/router";
 
 declare var $:any;
 
@@ -10,6 +11,8 @@ declare var $:any;
 
 export class LoginComponent implements OnInit{
     test : Date = new Date();
+
+    constructor(private router: Router) { }
 
     checkFullPageBackgroundImage(){
         var $page = $('.full-page');
@@ -23,6 +26,13 @@ export class LoginComponent implements OnInit{
     ngOnInit(){
         this.checkFullPageBackgroundImage();
 
+        this.router
+            .routerState.root.queryParams
+            .subscribe(params => {
+                let userId = params['userId'];
+                console.log('root: ' + userId);
+            });
+        
         setTimeout(function(){
             // after 1000 ms we add the class animated to the login/register card
             $('.card').removeClass('card-hidden');

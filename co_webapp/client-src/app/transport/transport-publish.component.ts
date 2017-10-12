@@ -4,6 +4,7 @@ import { CommonService } from "app/_services/common.service";
 import { TransportService } from "app/_services/transport.service";
 
 declare var $: any;
+declare var swal:any;
 interface FileReaderEventTarget extends EventTarget {
     result: string
 }
@@ -23,7 +24,19 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
     constructor(private userService: UserService, private commonService: CommonService,
         private transportService: TransportService) { }
 
+    testpublishItem() {
+        swal({
+            type: "success",
+            title: "Good job!",
+            text: "You clicked the button!",
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success"
+
+        });
+    };
+
     publishItem() {
+        /* Validate input data */
         this.userService.optionallyFirstEuthenticate(this.currentUserData, !this.userIsRegistering, this.userIsRegistering)
             .then(
             (resp) => {

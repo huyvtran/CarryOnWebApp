@@ -1,6 +1,7 @@
-﻿{
+{
   "compileOnSave": false,
   "compilerOptions": {
+    "types": [ "node" ],
     "outDir": "./dist/out-tsc",
     "baseUrl": "client-src",
     "sourceMap": true,
