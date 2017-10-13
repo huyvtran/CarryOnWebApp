@@ -8,3 +8,4 @@ C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\c
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.AssemblyInfo.cs
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.dll
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.pdb
+C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.csprojResolveAssemblyReference.cache

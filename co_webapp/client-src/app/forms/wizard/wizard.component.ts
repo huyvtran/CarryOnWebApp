@@ -29,7 +29,9 @@ export class WizardComponent implements OnInit, OnChanges, AfterViewInit {
             reader.readAsDataURL(input.files[0]);
         }
     };
-   
+
+    public profile = {};
+
     ngOnInit() {
 
         // Code for the Validator

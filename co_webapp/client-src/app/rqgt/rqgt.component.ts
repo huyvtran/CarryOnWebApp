@@ -10,7 +10,7 @@ import { RqgtService } from './../_services/rqgt.service';
 
 export class RqgtComponent implements OnInit{
 
-    constructor(private rqgtService: RqgtService, private router: Router) { }
+    constructor(public rqgtService: RqgtService, private router: Router) { }
 
     ngOnInit() {
         //this.rqgtService.getFilteredRqgt();
