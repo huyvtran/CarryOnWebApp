@@ -3,14 +3,14 @@
     <div class="col-sm-8 col-sm-offset-2">
       
       <!--      Wizard container        -->
-      <div class="wizard-container">
-        <div class="loader">
+      <div class="wizard-container carryon-loader-father">
+        <!--<div class="loader">
           <div class="loader">
             <svg class="circular" viewBox="25 25 50 50">
               <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10" />
             </svg>
           </div>
-        </div>
+        </div>-->
         <div class="card wizard-card" data-color="rose" id="wizardProfile">
           <form action="" method="">
             <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
@@ -42,12 +42,12 @@
                     <div class="h-flex flex-center tab-customized">
                       <div>
                         <a href="#pill1" data-toggle="tab"
-                           (click)="userIsRegistering=false"
+                           (click)="userActivationOption(false)"
                            [ngClass]="{'active': !userIsRegistering}">Accedi</a>
                       </div>
                       <div>
                         <a href="#pill2" data-toggle="tab"
-                           (click)="userIsRegistering=true"
+                           (click)="userActivationOption(true)"
                            [ngClass]="{'active': userIsRegistering}">Registrati</a>
                       </div>
                     </div>
@@ -66,7 +66,7 @@
                                   Email
                                   <small>(required)</small>
                                 </label>
-                                <input name="email" type="email" class="form-control">
+                                <input [(ngModel)]="currentUserData.email" name="email" type="email" class="form-control">
                               </div>
                             </div>
                             <!-- Password -->
@@ -79,7 +79,7 @@
                                   Password
                                   <small>(required)</small>
                                 </label>
-                                <input name="password" type="password" class="form-control">
+                                <input [(ngModel)]="currentUserData.password" name="password" type="password" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -108,7 +108,7 @@
                                   Email
                                   <small>(required)</small>
                                 </label>
-                                <input name="email" type="email" class="form-control">
+                                <input [(ngModel)]="currentUserData.email" name="email" type="email" class="form-control">
                               </div>
                             </div>
                             <!-- Password -->
@@ -121,7 +121,7 @@
                                   Password
                                   <small>(required)</small>
                                 </label>
-                                <input name="password" type="password" class="form-control">
+                                <input [(ngModel)]="currentUserData.password" name="password" type="password" class="form-control">
                               </div>
                             </div>
                             <!-- Confirm password -->
@@ -134,7 +134,7 @@
                                   Conferma Password
                                   <small>(required)</small>
                                 </label>
-                                <input name="passwordConfirm" type="password" class="form-control">
+                                <input [(ngModel)]="currentUserData.passwordConfirm" name="passwordConfirm" type="password" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -149,7 +149,7 @@
                                   Nome e Cognome
                                   <small>(required)</small>
                                 </label>
-                                <input name="firstAndLastName" type="text" class="form-control">
+                                <input [(ngModel)]="currentUserData.firstAndLastName" name="firstAndLastName" type="text" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -226,7 +226,7 @@
               <div class="pull-right">
                 <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
                 <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='finish' value='Pubblica'
-                       (click)="testpublishItem()"/>
+                       (click)="publishItem()"/>
               </div>
               <div class="pull-left">
                 <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />

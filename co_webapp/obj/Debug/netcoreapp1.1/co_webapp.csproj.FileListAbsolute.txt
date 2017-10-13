@@ -3,9 +3,9 @@ C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\bin\Debug\netcoreapp1.1\c
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\bin\Debug\netcoreapp1.1\co_webapp.runtimeconfig.dev.json
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\bin\Debug\netcoreapp1.1\co_webapp.dll
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\bin\Debug\netcoreapp1.1\co_webapp.pdb
+C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.csprojResolveAssemblyReference.cache
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.csproj.CoreCompileInputs.cache
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.AssemblyInfoInputs.cache
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.AssemblyInfo.cs
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.dll
 C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.pdb
-C:\mfo\Projects\CarryOn\Code\WebApp_Material\co_webapp\obj\Debug\netcoreapp1.1\co_webapp.csprojResolveAssemblyReference.cache

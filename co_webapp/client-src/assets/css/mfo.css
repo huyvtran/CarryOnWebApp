@@ -427,3 +427,61 @@ div.search-content {
 /*  ---------------------------------   END -- Modern Google Loader in Pure CSS    ----------------------------------  */
 /*  --------------------------------------------------------------------------------------------------------------  */
 
+/* START loading layer style */
+
+.carryon_loading {
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.carryon_loading_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  z-index: 999;
+}
+
+.carryon_loading_layer_light {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.80);
+  text-align: center;
+  z-index: 999;
+}
+
+.carryon_loading_transparent_layer {
+  position: absolute;
+  /*display: flex;*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  text-align: center;
+  z-index: 999;
+  cursor: no-drop;
+}
+
+.carryon-loader-father {
+  position: relative;
+}
+
+.flex-center-loader-primary {
+  align-self: center;
+}
+
+/* END loading layer style */
+
+
+
+
+

@@ -4,7 +4,7 @@ import { CommonService } from "app/_services/common.service";
 import { TransportService } from "app/_services/transport.service";
 
 declare var $: any;
-declare var swal:any;
+declare var swal: any;
 interface FileReaderEventTarget extends EventTarget {
     result: string
 }
@@ -19,10 +19,10 @@ interface FileReaderEvent extends Event {
 })
 export class TransportPublishComponent implements OnInit, OnChanges, AfterViewInit {
     public userIsRegistering = false;
-    public currentUserData : any;
+    public currentUserData = {};
 
-    constructor(private userService: UserService, private commonService: CommonService,
-        private transportService: TransportService) { }
+    constructor(public userService: UserService, private commonService: CommonService,
+        public transportService: TransportService) { }
 
     testpublishItem() {
         swal({
@@ -35,8 +35,18 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
         });
     };
 
+    userActivationOption(_isRegistering) {
+        this.userIsRegistering = _isRegistering;
+        this.cleanUserData();
+    };
+
+    cleanUserData() {
+        this.currentUserData = {};
+    };
+
     publishItem() {
         /* Validate input data */
+        /* Start loading info */
         this.userService.optionallyFirstEuthenticate(this.currentUserData, !this.userIsRegistering, this.userIsRegistering)
             .then(
             (resp) => {
@@ -44,11 +54,16 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
                 this.commonService.publishItem(this.transportService.currentTransport, true)
                     .then(
                     () => {
-
-                    }
-                    );
+                        $('.wizard-container').CarryonLoading(false);
+                    })
+                    .catch(err => {
+                        $('.wizard-container').CarryonLoading(false);
+                    });
             }
-        );
+            )
+            .catch(err => {
+                $('.wizard-container').CarryonLoading(false);
+            });
     }
 
     /* ---------------------------------------------------------- */
@@ -65,7 +80,7 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
             reader.readAsDataURL(input.files[0]);
         }
     };
-    
+
     ngOnInit() {
 
         // Code for the Validator
@@ -178,7 +193,7 @@ export class TransportPublishComponent implements OnInit, OnChanges, AfterViewIn
                     $($wizard).find('.btn-finish').show();
                 } else {
                     $($wizard).find('.btn-next').show();
-                    $($wizard).find('.btn-finish').hide(); 
+                    $($wizard).find('.btn-finish').hide();
                 }
 
                 var button_text = navigation.find('li:nth-child(' + $current + ') a').html();
